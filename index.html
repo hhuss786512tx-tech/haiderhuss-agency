@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HaiderHuss — Agency</title>
+  <meta name="description" content="We build digital experiences that manufacture trust and drive revenue for Texas businesses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Nav Pill -->
+  <nav class="nav-pill" id="navbar">
+    <div class="nav-pill__outer">
+      <div class="nav-pill__inner">
+        <a href="#" class="nav-pill__logo">HaiderHuss</a>
+        <div class="nav-pill__links">
+          <a href="#work" class="nav-pill__link">Work</a>
+          <a href="#results" class="nav-pill__link">Results</a>
+          <a href="#services" class="nav-pill__link">Services</a>
+        </div>
+        <button class="nav-pill__cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span>Start a Project</span>
+          <span class="nav-pill__cta-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </span>
+        </button>
+        <button class="nav-pill__hamburger" id="menuToggle" aria-label="Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay__links">
+      <a href="#work" class="menu-overlay__link" style="transition-delay: 0ms;">Work</a>
+      <a href="#results" class="menu-overlay__link" style="transition-delay: 50ms;">Results</a>
+      <a href="#services" class="menu-overlay__link" style="transition-delay: 100ms;">Services</a>
+      <a href="#contact" class="menu-overlay__link" style="transition-delay: 150ms;">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__badge reveal-up">Texas-Based Web Agency</div>
+    <h1 class="hero__heading reveal-up" style="transition-delay: 100ms;">
+      We build <em>digital experiences</em> that manufacture trust.
+    </h1>
+    <p class="hero__sub reveal-up" style="transition-delay: 200ms;">
+      From medical billing platforms to construction empires — we turn underperforming websites into revenue engines for Texas businesses.
+    </p>
+    <div class="hero__actions reveal-up" style="transition-delay: 300ms;">
+      <a href="#work" class="btn-primary">
+        <span>View Our Work</span>
+        <span class="btn-primary__icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="#results" class="btn-ghost reveal-up" style="transition-delay: 350ms;">See the Numbers →</a>
+    </div>
+  </section>
+
+  <!-- Work / Case Studies — Asymmetrical Bento -->
+  <section class="section" id="work">
+    <div class="section__eyebrow reveal-up">Selected Work</div>
+    <h2 class="section__heading reveal-up" style="transition-delay: 100ms;">Three clients. <em>Measurable impact.</em></h2>
+
+    <div class="bento-grid">
+      <!-- Card 1 — CareMedBill (Hero card, spans wide) -->
+      <article class="bento-card bento-card--hero reveal-up" style="transition-delay: 150ms;">
+        <div class="bento-card__outer">
+          <div class="bento-card__inner">
+            <div class="bento-card__tag">Medical Billing</div>
+            <h3 class="bento-card__title">CareMedBill</h3>
+            <p class="bento-card__desc">A full-scale digital presence for a revenue cycle management company serving medical practices across Texas.</p>
+            <div class="bento-card__metrics">
+              <div class="metric">
+                <span class="metric__value">20+</span>
+                <span class="metric__label">Service Pages</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">ROI</span>
+                <span class="metric__label">Calculator Built</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">Live</span>
+                <span class="metric__label">caremedbill.com</span>
+              </div>
+            </div>
+            <a href="https://caremedbill.com" target="_blank" rel="noopener" class="bento-card__link">
+              Visit Live Site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 — SSC -->
+      <article class="bento-card reveal-up" style="transition-delay: 200ms;">
+        <div class="bento-card__outer">
+          <div class="bento-card__inner">
+            <div class="bento-card__tag">Construction</div>
+            <h3 class="bento-card__title">Solid State Construction</h3>
+            <p class="bento-card__desc">Architectural & engineering excellence firm. We took them from zero visibility to live on Google, generating real client calls.</p>
+            <div class="bento-card__metrics">
+              <div class="metric">
+                <span class="metric__value">#1</span>
+                <span class="metric__label">Google Ranking</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">Live</span>
+                <span class="metric__label">On Google Maps</span>
+              </div>
+            </div>
+            <a href="https://solidstateconstruction.com" target="_blank" rel="noopener" class="bento-card__link">
+              Visit Live Site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 — Azul Bio -->
+      <article class="bento-card reveal-up" style="transition-delay: 250ms;">
+        <div class="bento-card__outer">
+          <div class="bento-card__inner">
+            <div class="bento-card__tag">Biotech</div>
+            <h3 class="bento-card__title">Azul Bio Research</h3>
+            <p class="bento-card__desc">A cutting-edge clinical research organization. We built their digital flagship — a React-powered site with prerendered SEO.</p>
+            <div class="bento-card__metrics">
+              <div class="metric">
+                <span class="metric__value">SSR</span>
+                <span class="metric__label">SEO Optimized</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">6</span>
+                <span class="metric__label">Content Pages</span>
+              </div>
+            </div>
+            <a href="https://github.com/hhuss786512tx-tech/Azul-Bio-research" target="_blank" rel="noopener" class="bento-card__link">
+              View Project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Results / Proof Section -->
+  <section class="section section--dark" id="results">
+    <div class="section__eyebrow section__eyebrow--light reveal-up">The Proof</div>
+    <h2 class="section__heading section__heading--light reveal-up" style="transition-delay: 100ms;">Results that speak <em>louder than promises.</em></h2>
+
+    <div class="results-grid">
+      <div class="result-card reveal-up" style="transition-delay: 150ms;">
+        <div class="result-card__outer">
+          <div class="result-card__inner">
+            <span class="result-card__number">01</span>
+            <h4 class="result-card__title">Got Solid State Construction on Google</h4>
+            <p class="result-card__desc">SSC went from invisible to ranking #1 on Google for their target keywords. Real clients now find them, call them, and hire them — all from the website we built.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card reveal-up" style="transition-delay: 200ms;">
+        <div class="result-card__outer">
+          <div class="result-card__inner">
+            <span class="result-card__number">02</span>
+            <h4 class="result-card__title">Launched a Live Website for Doctors</h4>
+            <p class="result-card__desc">Built and deployed the full CareMedBill platform — a live, revenue-generating website for a medical billing company that serves doctors across Texas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card reveal-up" style="transition-delay: 250ms;">
+        <div class="result-card__outer">
+          <div class="result-card__inner">
+            <span class="result-card__number">03</span>
+            <h4 class="result-card__title">Real Click Traffic on SSC</h4>
+            <p class="result-card__desc">Since launch, Solid State Construction's website receives consistent organic traffic and real client inquiries — not bots, not fake numbers. Verified results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="section__eyebrow reveal-up">What We Do</div>
+    <h2 class="section__heading reveal-up" style="transition-delay: 100ms;">Websites that <em>manufacture trust</em> and close sales.</h2>
+
+    <div class="services-grid">
+      <div class="service-card reveal-up" style="transition-delay: 150ms;">
+        <div class="service-card__outer">
+          <div class="service-card__inner">
+            <div class="service-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="3"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4 class="service-card__title">Custom Web Design</h4>
+            <p class="service-card__desc">Bespoke, conversion-focused websites built from scratch. No templates. No shortcuts. Just premium design that builds credibility and drives action.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card reveal-up" style="transition-delay: 200ms;">
+        <div class="service-card__outer">
+          <div class="service-card__inner">
+            <div class="service-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h4 class="service-card__title">SEO & Google Visibility</h4>
+            <p class="service-card__desc">We don't just build sites — we make sure people find them. Google indexing, Maps optimization, schema markup, and local SEO that actually works.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card reveal-up" style="transition-delay: 250ms;">
+        <div class="service-card__outer">
+          <div class="service-card__inner">
+            <div class="service-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4 class="service-card__title">Analytics & Optimization</h4>
+            <p class="service-card__desc">Data-driven decisions. We track every click, every form submission, every conversion — then optimize relentlessly to improve your ROI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section section--cta" id="contact">
+    <div class="cta-block reveal-up">
+      <div class="cta-block__outer">
+        <div class="cta-block__inner">
+          <h2 class="cta-block__heading">Ready to turn your website into a <em>revenue engine?</em></h2>
+          <p class="cta-block__desc">We're taking on select projects in Texas. If you're a serious business owner who wants a website that actually generates leads — let's talk.</p>
+          <a href="mailto:haider@haiderhuss.com" class="btn-primary btn-primary--large">
+            <span>Get in Touch</span>
+            <span class="btn-primary__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">HaiderHuss</span>
+        <p class="footer__tagline">Texas Web Agency. Trust-first design for businesses that matter.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#work">Work</a>
+        <a href="#results">Results</a>
+        <a href="#services">Services</a>
+        <a href="mailto:haider@haiderhuss.com">Contact</a>
+      </div>
+      <p class="footer__copy">© 2026 HaiderHuss Agency</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
