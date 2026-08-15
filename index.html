@@ -1,420 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HaiderHuss — Agency</title>
-  <meta name="description" content="We build digital experiences that manufacture trust and drive revenue for Texas businesses.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HaiderHuss — Web &amp; Growth Agency for Texas Businesses</title>
+<meta name="description" content="Hand-coded, conversion-first websites and growth systems for Texas businesses. Real results, transparent pricing, zero page-builder bloat.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141110'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-style='italic' fill='%23c9702f' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HaiderHuss — Web &amp; Growth Agency for Texas Businesses">
+<meta property="og:description" content="Hand-coded, conversion-first websites and growth systems for Texas businesses. Real results, transparent pricing, zero page-builder bloat.">
+<meta property="og:image" content="https://haiderhuss.com/assets/og-image.png">
+<meta property="og:url" content="https://haiderhuss.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HaiderHuss — Web &amp; Growth Agency for Texas Businesses">
+<meta name="twitter:description" content="Hand-coded, conversion-first websites and growth systems for Texas businesses.">
+<meta name="twitter:image" content="https://haiderhuss.com/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#141110',
+          surface: '#1b1613',
+          elevated: '#231c18',
+          copper: '#c9702f',
+          'copper-light': '#e2924f',
+          brass: '#b8823f',
+          sand: '#e9dfd2',
+          fog: '#a89a8c',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          sans: ['Hanken Grotesk', 'sans-serif'],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  :root { color-scheme: dark; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #141110;
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+  .font-display { font-family: 'Fraunces', serif; }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .glow-copper {
+    background:
+      radial-gradient(60% 50% at 15% 0%, rgba(201,112,47,0.22), transparent 60%),
+      radial-gradient(50% 40% at 90% 20%, rgba(184,130,63,0.14), transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, rgba(20,17,16,0.9), #141110 70%);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -8px rgba(201,112,47,0.18), 0 2px 6px rgba(0,0,0,0.35);
+  }
+  .shadow-floating {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.45), 0 24px 48px -12px rgba(201,112,47,0.28);
+  }
+  .shadow-btn {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3), 0 8px 20px -6px rgba(201,112,47,0.45);
+  }
+
+  .ease-spring { transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .ease-smooth { transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card-hover {
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s cubic-bezier(0.22,1,0.36,1), border-color 0.35s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+
+  .btn-primary {
+    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.015); }
+  .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+  .link-underline {
+    background-image: linear-gradient(#e2924f, #e2924f);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .link-underline:hover { background-size: 100% 1px; }
+
+  ::selection { background: #c9702f; color: #141110; }
+
+  input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+    outline: 2px solid #e2924f;
+    outline-offset: 2px;
+  }
+</style>
 </head>
-<body>
+<body class="text-sand antialiased">
 
-  <!-- Film Grain Overlay -->
-  <div class="grain-overlay" aria-hidden="true"></div>
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink/80 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="font-display text-xl tracking-tight text-sand">HaiderHuss<span class="text-copper">.</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-fog">
+      <a href="#work" class="link-underline hover:text-sand transition-colors">Work</a>
+      <a href="#process" class="link-underline hover:text-sand transition-colors">Process</a>
+      <a href="#pricing" class="link-underline hover:text-sand transition-colors">Pricing</a>
+      <a href="#contact" class="link-underline hover:text-sand transition-colors">Contact</a>
+    </nav>
+    <a href="#contact" class="btn-primary shadow-btn bg-copper hover:bg-copper-light text-ink text-sm font-semibold px-4 py-2.5 rounded-full">
+      Get My Free Audit
+    </a>
+  </div>
+</header>
 
-  <!-- Floating Nav Pill -->
-  <nav class="nav-pill" id="navbar">
-    <div class="nav-pill__outer">
-      <div class="nav-pill__inner">
-        <a href="#" class="nav-pill__logo">HaiderHuss</a>
-        <div class="nav-pill__links">
-          <a href="#work" class="nav-pill__link">Work</a>
-          <a href="#results" class="nav-pill__link">Results</a>
-          <a href="#services" class="nav-pill__link">Services</a>
-        </div>
-        <button class="nav-pill__cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-          <span>Start a Project</span>
-          <span class="nav-pill__cta-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-          </span>
-        </button>
-        <button class="nav-pill__hamburger" id="menuToggle" aria-label="Menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-  </nav>
+<!-- PERSISTENT FLOATING CTA -->
+<div id="floating-cta" class="fixed bottom-6 right-6 z-40 pointer-events-none opacity-0 translate-y-4 transition-all duration-500 ease-out">
+  <a href="#contact" class="pointer-events-auto btn-primary shadow-floating bg-copper hover:bg-copper-light text-ink font-semibold pl-5 pr-6 py-3 rounded-full text-sm flex items-center gap-2 border border-black/10">
+    <span class="inline-flex h-2 w-2 rounded-full bg-ink/70"></span>
+    Get My Free Audit
+  </a>
+</div>
 
-  <!-- Fullscreen Menu Overlay -->
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="menu-overlay__links">
-      <a href="#work" class="menu-overlay__link" style="transition-delay: 0ms;">Work</a>
-      <a href="#results" class="menu-overlay__link" style="transition-delay: 50ms;">Results</a>
-      <a href="#services" class="menu-overlay__link" style="transition-delay: 100ms;">Services</a>
-      <a href="#contact" class="menu-overlay__link" style="transition-delay: 150ms;">Contact</a>
+<!-- HERO -->
+<section id="top" class="relative glow-copper pt-40 pb-28 px-6 overflow-hidden">
+  <div class="grain"></div>
+  <div class="max-w-4xl mx-auto text-center relative">
+    <p class="reveal text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-5">Web &amp; Growth Agency for Contractors, Medical Practices &amp; Local Retail</p>
+    <h1 class="reveal font-display text-[2.75rem] leading-[1.1] sm:text-6xl sm:leading-[1.05] tracking-[-0.03em] text-sand mb-6">
+      Websites that turn strangers into <span class="italic text-copper-light">paying customers.</span>
+    </h1>
+    <p class="reveal text-lg text-fog leading-[1.7] max-w-2xl mx-auto mb-10">
+      Hand-coded, conversion-first sites for Texas businesses — no templates, no page-builder bloat.
+      We build the site, get you found, and make sure every lead gets answered before your competitor even wakes up.
+    </p>
+    <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#contact" class="btn-primary shadow-btn bg-copper hover:bg-copper-light text-ink font-semibold px-7 py-3.5 rounded-full text-[15px]">
+        Get My Free Audit
+      </a>
+      <a href="#work" class="btn-primary text-sand border border-white/15 hover:border-copper-light/60 font-semibold px-7 py-3.5 rounded-full text-[15px]">
+        See Our Work
+      </a>
     </div>
   </div>
+</section>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero__badge reveal-up">Texas-Based Web Agency</div>
-    <h1 class="hero__heading reveal-up" style="transition-delay: 100ms;">
-      We build <em>digital experiences</em> that manufacture trust.
-    </h1>
-    <p class="hero__sub reveal-up" style="transition-delay: 200ms;">
-      From medical billing platforms to construction empires — we turn underperforming websites into revenue engines for Texas businesses.
-    </p>
-    <div class="hero__actions reveal-up" style="transition-delay: 300ms;">
-      <a href="#results" class="btn-primary">
-        <span>See Our Results</span>
-        <span class="btn-primary__icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-        </span>
+<!-- PROOF STRIP -->
+<section class="border-y border-white/5 bg-surface/60 py-6 px-6">
+  <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-fog">
+    <span class="uppercase tracking-widest text-xs text-fog/70">Live sites we've shipped</span>
+    <span class="text-sand/80">Solid State Construction</span>
+    <span class="text-white/15">·</span>
+    <span class="text-sand/80">Quality Halal Market</span>
+    <span class="text-white/15">·</span>
+    <span class="text-sand/80">CareMedBill</span>
+  </div>
+</section>
+
+<!-- REAL RESULTS -->
+<section class="py-24 px-6">
+  <div class="max-w-3xl mx-auto reveal text-center">
+    <p class="text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-5">Verified Result — Solid State Construction, Google Ads</p>
+    <p class="font-display leading-none text-copper-light mb-6" style="font-size: clamp(4.5rem, 12vw, 8rem);">270+</p>
+    <p class="text-lg sm:text-xl text-sand leading-[1.6] max-w-xl mx-auto mb-8">organic clicks in 14 days on a $200 budget — nearly 2&times; the industry projection, verifiable in Google Ads.</p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <span class="rounded-full bg-elevated border border-white/10 px-5 py-2.5 text-sm text-fog"><span class="text-copper-light font-semibold">$0.74</span> cost per click — ~50% below industry average</span>
+      <span class="rounded-full bg-elevated border border-white/10 px-5 py-2.5 text-sm text-fog"><span class="text-copper-light font-semibold">90+</span> PageSpeed target on every build</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="py-8 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal mb-12 text-center">
+      <p class="text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-3">Selected Work</p>
+      <h2 class="font-display text-3xl sm:text-4xl tracking-[-0.02em] text-sand">Real businesses, real launches</h2>
+    </div>
+    <div class="reveal grid sm:grid-cols-3 gap-6">
+      <a href="https://solidstatesconstruction.com" target="_blank" rel="noopener" class="group rounded-2xl bg-elevated border border-white/5 shadow-elevated card-hover overflow-hidden flex flex-col">
+        <div class="flex items-center gap-1.5 px-4 py-3 bg-surface border-b border-white/5">
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="ml-2 text-xs text-fog/70 truncate">solidstatesconstruction.com</span>
+        </div>
+        <div class="h-40 overflow-hidden">
+          <img src="assets/portfolio/ssc.png" alt="Solid State Construction live website" class="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs uppercase tracking-wider text-copper-light font-semibold mb-3">Construction</p>
+          <h3 class="font-display text-xl text-sand mb-2">Solid State Construction</h3>
+          <p class="text-sm text-fog leading-[1.7] flex-1">Full site rebuild + Google Ads campaign. Delivered 270+ clicks in 14 days at $0.74 CPC.</p>
+        </div>
       </a>
-      <a href="#work" class="btn-ghost reveal-up" style="transition-delay: 350ms;">View Client Work →</a>
+      <a href="https://hhuss786512tx-tech.github.io/Quality-Halal-Market/" target="_blank" rel="noopener" class="group rounded-2xl bg-elevated border border-white/5 shadow-elevated card-hover overflow-hidden flex flex-col">
+        <div class="flex items-center gap-1.5 px-4 py-3 bg-surface border-b border-white/5">
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="ml-2 text-xs text-fog/70 truncate">Quality Halal Market — live preview</span>
+        </div>
+        <div class="h-40 overflow-hidden">
+          <img src="assets/portfolio/qhm.png" alt="Quality Halal Market live website" class="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs uppercase tracking-wider text-copper-light font-semibold mb-3">Food &amp; Retail</p>
+          <h3 class="font-display text-xl text-sand mb-2">Quality Halal Market</h3>
+          <p class="text-sm text-fog leading-[1.7] flex-1">Custom Shopify build for a specialty grocer — product catalog, cart, and mobile-first checkout, live today.</p>
+        </div>
+      </a>
+      <a href="https://caremedbill.com" target="_blank" rel="noopener" class="group rounded-2xl bg-elevated border border-white/5 shadow-elevated card-hover overflow-hidden flex flex-col">
+        <div class="flex items-center gap-1.5 px-4 py-3 bg-surface border-b border-white/5">
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+          <span class="ml-2 text-xs text-fog/70 truncate">caremedbill.com</span>
+        </div>
+        <div class="h-40 overflow-hidden">
+          <img src="assets/portfolio/caremedbill.png" alt="CareMedBill live website" class="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs uppercase tracking-wider text-copper-light font-semibold mb-3">Medical Billing</p>
+          <h3 class="font-display text-xl text-sand mb-2">CareMedBill</h3>
+          <p class="text-sm text-fog leading-[1.7] flex-1">Trust-first site for a medical billing platform — built to convert practice-owner visitors into calls.</p>
+        </div>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── RESULTS DASHBOARD — Animated Data Points ── -->
-  <section class="section section--dark" id="results">
-    <div class="section__eyebrow section__eyebrow--light reveal-up">Proven Performance</div>
-    <h2 class="section__heading section__heading--light reveal-up" style="transition-delay: 100ms;">
-      $200 → 270+ clicks in 2 weeks. <em>Here's the proof.</em>
-    </h2>
-
-    <div class="stats-grid">
-      <div class="stat-card stat-card--hero reveal-up" style="transition-delay: 150ms;">
-        <div class="stat-card__outer">
-          <div class="stat-card__inner">
-            <div class="stat-card__tag">Solid State Construction</div>
-            <h3 class="stat-card__title">SEO Launch Results</h3>
-            <p class="stat-card__desc">We took SSC from complete invisibility to page one of Google in just 14 days — on a tiny $200 budget.</p>
-            <div class="stat-card__data-grid">
-              <div class="data-point data-point--large">
-                <span class="data-point__value" data-count="270">0</span>
-                <span class="data-point__suffix">+</span>
-                <span class="data-point__label">Organic Clicks</span>
-                <span class="data-point__note">Expected: 110–140</span>
-              </div>
-              <div class="data-point">
-                <span class="data-point__value" data-count="200">$0</span>
-                <span class="data-point__label">Total Ad Spend</span>
-                <span class="data-point__note">$0.74 per click</span>
-              </div>
-              <div class="data-point">
-                <span class="data-point__value" data-count="14">0</span>
-                <span class="data-point__label">Days to Launch</span>
-                <span class="data-point__note">Zero to page one</span>
-              </div>
-            </div>
-            <div class="stat-card__visual">
-              <div class="trend-bar">
-                <div class="trend-bar__bar trend-bar__bar--expected"><span>Expected: 140</span></div>
-                <div class="trend-bar__bar trend-bar__bar--actual"><span>Actual: 270+</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- PROCESS -->
+<section id="process" class="py-28 px-6 bg-surface/40 border-y border-white/5">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal mb-14 text-center">
+      <p class="text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-3">How It Works</p>
+      <h2 class="font-display text-3xl sm:text-4xl tracking-[-0.02em] text-sand">Three steps. No fluff.</h2>
+    </div>
+    <div class="reveal grid sm:grid-cols-3 gap-10">
+      <div>
+        <p class="font-display text-3xl text-copper mb-3">01</p>
+        <h3 class="text-sand font-semibold mb-2">Free Audit</h3>
+        <p class="text-sm text-fog leading-[1.7]">We tear down your current site — speed, design, SEO, missed leads — and show you exactly what's costing you customers.</p>
       </div>
-
-      <div class="stat-card reveal-up" style="transition-delay: 200ms;">
-        <div class="stat-card__outer">
-          <div class="stat-card__inner">
-            <div class="stat-card__tag">Solid State Construction</div>
-            <h3 class="stat-card__title">Google Presence</h3>
-            <div class="data-point">
-              <span class="data-point__value" data-count="1">0</span>
-              <span class="data-point__label">Google Ranking</span>
-              <span class="data-point__note">Top position for target keywords</span>
-            </div>
-          </div>
-        </div>
+      <div>
+        <p class="font-display text-3xl text-copper mb-3">02</p>
+        <h3 class="text-sand font-semibold mb-2">Build</h3>
+        <p class="text-sm text-fog leading-[1.7]">Hand-coded, conversion-first site. No page builders. Mobile-first, fast, and wired to real lead capture from day one.</p>
       </div>
-
-      <div class="stat-card reveal-up" style="transition-delay: 250ms;">
-        <div class="stat-card__outer">
-          <div class="stat-card__inner">
-            <div class="stat-card__tag">CareMedBill</div>
-            <h3 class="stat-card__title">Live Platform</h3>
-            <div class="data-point">
-              <span class="data-point__value">100%</span>
-              <span class="data-point__label">Site Uptime</span>
-              <span class="data-point__note">Serving doctors across Texas</span>
-            </div>
-          </div>
-        </div>
+      <div>
+        <p class="font-display text-3xl text-copper mb-3">03</p>
+        <h3 class="text-sand font-semibold mb-2">Launch &amp; Grow</h3>
+        <p class="text-sm text-fog leading-[1.7]">SEO foundation, tracking, and instant lead-reply automation so every visitor turns into a followed-up lead.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── WORK — Site Previews in Browser Frames ── -->
-  <section class="section" id="work">
-    <div class="section__eyebrow reveal-up">Our Work</div>
-    <h2 class="section__heading reveal-up" style="transition-delay: 100ms;">Three clients. <em>Real websites. Real results.</em></h2>
-
-    <!-- SSC — Featured with performance story -->
-    <div class="site-showcase reveal-up" style="transition-delay: 150ms;">
-      <div class="site-showcase__outer">
-        <div class="site-showcase__inner">
-          <div class="site-showcase__content">
-            <div class="site-showcase__tag">Construction</div>
-            <h3 class="site-showcase__title">Solid State Construction</h3>
-            <p class="site-showcase__desc">Architectural & engineering excellence firm. We took them from zero visibility to page one of Google, generating 270+ organic clicks in just 14 days on a $200 ad budget — nearly doubling the expected 110–140 clicks.</p>
-            <div class="site-showcase__stats">
-              <div class="mini-stat">
-                <span class="mini-stat__value" data-count="270">0</span>
-                <span class="mini-stat__label">Clicks in 14 Days</span>
-              </div>
-              <div class="mini-stat">
-                <span class="mini-stat__value">$200</span>
-                <span class="mini-stat__label">Total Spend</span>
-              </div>
-              <div class="mini-stat">
-                <span class="mini-stat__value">#1</span>
-                <span class="mini-stat__label">On Google</span>
-              </div>
-            </div>
-            <a href="https://solidstateconstruction.com" target="_blank" rel="noopener" class="btn-primary">
-              <span>Visit Live Site</span>
-              <span class="btn-primary__icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </span>
-            </a>
-          </div>
-          <div class="site-showcase__preview">
-            <div class="browser-frame">
-              <div class="browser-frame__bar">
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__url">solidstateconstruction.com</span>
-              </div>
-              <div class="browser-frame__body ssc-preview"></div>
-            </div>
-          </div>
-        </div>
+<!-- PRICING -->
+<section id="pricing" class="py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal mb-14 text-center">
+      <p class="text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-3">Transparent Pricing</p>
+      <h2 class="font-display text-3xl sm:text-4xl tracking-[-0.02em] text-sand">Startup pricing, no surprise invoices</h2>
+    </div>
+    <div class="reveal grid sm:grid-cols-3 gap-6 items-stretch">
+      <div class="rounded-2xl bg-elevated border border-white/5 shadow-elevated card-hover p-8 flex flex-col">
+        <h3 class="text-sand font-semibold text-lg mb-1">Get Online</h3>
+        <p class="font-display text-3xl text-copper-light mb-4">$1,500</p>
+        <ul class="text-sm text-fog leading-[1.9] flex-1 space-y-1">
+          <li>Custom 5-page website</li>
+          <li>Mobile responsive</li>
+          <li>Contact form → email</li>
+          <li>Basic SEO foundation</li>
+          <li>Google Business Profile setup</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-elevated border border-copper/40 shadow-floating card-hover p-8 flex flex-col relative">
+        <span class="absolute -top-3 left-8 bg-copper text-ink text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
+        <h3 class="text-sand font-semibold text-lg mb-1">Get Found</h3>
+        <p class="font-display text-3xl text-copper-light mb-4">$2,500</p>
+        <ul class="text-sm text-fog leading-[1.9] flex-1 space-y-1">
+          <li>Everything in Get Online</li>
+          <li>5 city/location landing pages</li>
+          <li>GA4 + conversion tracking</li>
+          <li>Local SEO optimization</li>
+          <li>Search Console setup</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-elevated border border-white/5 shadow-elevated card-hover p-8 flex flex-col">
+        <h3 class="text-sand font-semibold text-lg mb-1">Get Leads</h3>
+        <p class="font-display text-3xl text-copper-light mb-4">$4,500</p>
+        <ul class="text-sm text-fog leading-[1.9] flex-1 space-y-1">
+          <li>Everything in Get Found</li>
+          <li>Speed-to-Lead™ instant reply engine</li>
+          <li>Google Ads campaign setup</li>
+          <li>Retargeting + exit-intent capture</li>
+          <li>First month retainer included</li>
+        </ul>
       </div>
     </div>
+    <p class="reveal text-center text-sm text-fog mt-8">Every project starts with the free audit — we scope exact pricing after we see your site.</p>
+  </div>
+</section>
 
-    <!-- CareMedBill -->
-    <div class="site-showcase site-showcase--reverse reveal-up" style="transition-delay: 200ms;">
-      <div class="site-showcase__outer">
-        <div class="site-showcase__inner">
-          <div class="site-showcase__preview">
-            <div class="browser-frame">
-              <div class="browser-frame__bar">
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__url">caremedbill.com</span>
-              </div>
-              <div class="browser-frame__body cmb-preview"></div>
-            </div>
-          </div>
-          <div class="site-showcase__content">
-            <div class="site-showcase__tag">Medical Billing</div>
-            <h3 class="site-showcase__title">CareMedBill</h3>
-            <p class="site-showcase__desc">A full-scale digital presence for a revenue cycle management company. We built a live platform with 20+ service pages, an ROI calculator, and a booking system — serving medical practices across Texas.</p>
-            <div class="site-showcase__stats">
-              <div class="mini-stat">
-                <span class="mini-stat__value">20+</span>
-                <span class="mini-stat__label">Service Pages</span>
-              </div>
-              <div class="mini-stat">
-                <span class="mini-stat__value">Live</span>
-                <span class="mini-stat__label">On caremedbill.com</span>
-              </div>
-            </div>
-            <a href="https://caremedbill.com" target="_blank" rel="noopener" class="btn-primary">
-              <span>Visit Live Site</span>
-              <span class="btn-primary__icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </span>
-            </a>
-          </div>
-        </div>
+<!-- WHY -->
+<section class="py-24 px-6 bg-surface/40 border-y border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal mb-12 text-center">
+      <p class="text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-3">Why HaiderHuss</p>
+      <h2 class="font-display text-3xl sm:text-4xl tracking-[-0.02em] text-sand">Not another page-builder shop</h2>
+    </div>
+    <div class="reveal grid sm:grid-cols-2 gap-x-10 gap-y-6">
+      <div class="flex gap-3">
+        <span class="text-copper-light mt-0.5">—</span>
+        <p class="text-sm text-fog leading-[1.7]"><span class="text-sand font-medium">Real results, not promises.</span> 270+ organic clicks in 14 days at $0.74 CPC for a real client, verifiable in Google Ads.</p>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-copper-light mt-0.5">—</span>
+        <p class="text-sm text-fog leading-[1.7]"><span class="text-sand font-medium">Hand-coded, not templated.</span> No Divi, no Elementor, no bloated builders — clean, fast code.</p>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-copper-light mt-0.5">—</span>
+        <p class="text-sm text-fog leading-[1.7]"><span class="text-sand font-medium">Texas-based.</span> We understand Texas businesses, Texas markets, and Texas customers.</p>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-copper-light mt-0.5">—</span>
+        <p class="text-sm text-fog leading-[1.7]"><span class="text-sand font-medium">Conversion-first.</span> We don't just build pretty sites — we build sites that turn visitors into customers.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Azul Bio -->
-    <div class="site-showcase reveal-up" style="transition-delay: 250ms;">
-      <div class="site-showcase__outer">
-        <div class="site-showcase__inner">
-          <div class="site-showcase__content">
-            <div class="site-showcase__tag">Biotech</div>
-            <h3 class="site-showcase__title">Azul Bio Research</h3>
-            <p class="site-showcase__desc">A cutting-edge clinical research organization. We built their digital flagship — a React-powered SPA with prerendered SSR for perfect SEO visibility. Every page is indexed and discoverable by pharma sponsors.</p>
-            <div class="site-showcase__stats">
-              <div class="mini-stat">
-                <span class="mini-stat__value">6</span>
-                <span class="mini-stat__label">Content Pages</span>
-              </div>
-              <div class="mini-stat">
-                <span class="mini-stat__value">SSR</span>
-                <span class="mini-stat__label">SEO Optimized</span>
-              </div>
-            </div>
-            <a href="https://github.com/hhuss786512tx-tech/Azul-Bio-research" target="_blank" rel="noopener" class="btn-primary">
-              <span>View Project</span>
-              <span class="btn-primary__icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </span>
-            </a>
-          </div>
-          <div class="site-showcase__preview">
-            <div class="browser-frame">
-              <div class="browser-frame__bar">
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__dot"></span>
-                <span class="browser-frame__url">azulbioresearch.com</span>
-              </div>
-              <div class="browser-frame__body azul-preview"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- CONTACT / LEAD FORM -->
+<section id="contact" class="py-28 px-6">
+  <div class="max-w-2xl mx-auto">
+    <div class="reveal mb-10 text-center">
+      <p class="text-xs tracking-[0.2em] uppercase text-copper-light font-semibold mb-3">Free Site Audit</p>
+      <h2 class="font-display text-3xl sm:text-4xl tracking-[-0.02em] text-sand mb-4">Let's see what your site is costing you</h2>
+      <p class="text-fog leading-[1.7]">Drop your site URL and we'll send back 3 specific things costing you leads right now — no charge, no obligation.</p>
     </div>
-  </section>
 
-  <!-- ── PROOF — Animated Before/After Comparison ── -->
-  <section class="section section--dark" id="proof">
-    <div class="section__eyebrow section__eyebrow--light reveal-up">The Proof Is In The Numbers</div>
-    <h2 class="section__heading section__heading--light reveal-up" style="transition-delay: 100ms;">Before us vs. <em>with us.</em></h2>
-
-    <div class="results-grid">
-      <div class="result-card reveal-up" style="transition-delay: 150ms;">
-        <div class="result-card__outer">
-          <div class="result-card__inner">
-            <span class="result-card__number">01</span>
-            <h4 class="result-card__title">Got SSC on Google — From Invisible to #1</h4>
-            <div class="result-card__comparison">
-              <div class="comp-row">
-                <span class="comp-label">Before us</span>
-                <span class="comp-value comp-value--bad">Not on Google</span>
-              </div>
-              <div class="comp-row">
-                <span class="comp-label">With us</span>
-                <span class="comp-value comp-value--good">#1 ranking, page one</span>
-              </div>
-            </div>
-          </div>
+    <form id="audit-form" class="reveal rounded-2xl bg-elevated border border-white/5 shadow-floating p-8 space-y-5">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-fog mb-2" for="name">Name</label>
+          <input required id="name" name="name" type="text" class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-sand placeholder:text-fog/50 focus:border-copper-light/60 transition-colors" placeholder="Jane Rivera">
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-fog mb-2" for="business">Business Name</label>
+          <input required id="business" name="business" type="text" class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-sand placeholder:text-fog/50 focus:border-copper-light/60 transition-colors" placeholder="Rivera Concrete Co.">
         </div>
       </div>
-
-      <div class="result-card reveal-up" style="transition-delay: 200ms;">
-        <div class="result-card__outer">
-          <div class="result-card__inner">
-            <span class="result-card__number">02</span>
-            <h4 class="result-card__title">270+ Clicks in 14 Days — on $200 Budget</h4>
-            <div class="result-card__comparison">
-              <div class="comp-row">
-                <span class="comp-label">Expected clicks</span>
-                <span class="comp-value">110 – 140</span>
-              </div>
-              <div class="comp-row">
-                <span class="comp-label">Actual clicks</span>
-                <span class="comp-value comp-value--good">270+ — 2× the projection</span>
-              </div>
-            </div>
-          </div>
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-fog mb-2" for="url">Website URL</label>
+        <input required id="url" name="url" type="text" class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-sand placeholder:text-fog/50 focus:border-copper-light/60 transition-colors" placeholder="yourbusiness.com">
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-fog mb-2" for="email">Email</label>
+          <input required id="email" name="email" type="email" class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-sand placeholder:text-fog/50 focus:border-copper-light/60 transition-colors" placeholder="jane@rivera.com">
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-fog mb-2" for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-sand placeholder:text-fog/50 focus:border-copper-light/60 transition-colors" placeholder="(555) 555-0123">
         </div>
       </div>
+      <button type="submit" class="btn-primary shadow-btn w-full bg-copper hover:bg-copper-light text-ink font-semibold px-7 py-3.5 rounded-full text-[15px]">
+        Get My Free Audit
+      </button>
+      <p id="form-status" class="text-sm text-center text-fog"></p>
+    </form>
+  </div>
+</section>
 
-      <div class="result-card reveal-up" style="transition-delay: 250ms;">
-        <div class="result-card__outer">
-          <div class="result-card__inner">
-            <span class="result-card__number">03</span>
-            <h4 class="result-card__title">$0.74 Per Click — 50% Below Industry Average</h4>
-            <div class="result-card__comparison">
-              <div class="comp-row">
-                <span class="comp-label">Industry CPC</span>
-                <span class="comp-value">$1.50 – $3.00</span>
-              </div>
-              <div class="comp-row">
-                <span class="comp-label">Our CPC</span>
-                <span class="comp-value comp-value--good">$0.74 — 50% cheaper</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-10 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-fog">
+    <p class="font-display text-sand text-base">HaiderHuss<span class="text-copper">.</span></p>
+    <p>haider@haiderhuss.com · Texas-based</p>
+    <p class="text-fog/60">© 2026 HaiderHuss Agency</p>
+  </div>
+</footer>
 
-  <!-- Services -->
-  <section class="section" id="services">
-    <div class="section__eyebrow reveal-up">What We Do</div>
-    <h2 class="section__heading reveal-up" style="transition-delay: 100ms;">Websites that <em>manufacture trust</em> and close sales.</h2>
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
 
-    <div class="services-grid">
-      <div class="service-card reveal-up" style="transition-delay: 150ms;">
-        <div class="service-card__outer">
-          <div class="service-card__inner">
-            <div class="service-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="3"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h4 class="service-card__title">Custom Web Design</h4>
-            <p class="service-card__desc">Bespoke, conversion-focused websites built from scratch. No templates. No shortcuts. Just premium design that builds credibility and drives action.</p>
-          </div>
-        </div>
-      </div>
+  // Persistent floating CTA: hidden near the top (nav CTA already covers it)
+  // and hidden once the contact form itself is on screen.
+  const floatingCta = document.getElementById('floating-cta');
+  const contactSection = document.getElementById('contact');
+  const heroSection = document.getElementById('top');
+  let contactVisible = false;
 
-      <div class="service-card reveal-up" style="transition-delay: 200ms;">
-        <div class="service-card__outer">
-          <div class="service-card__inner">
-            <div class="service-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-            <h4 class="service-card__title">SEO & Google Visibility</h4>
-            <p class="service-card__desc">We don't just build sites — we make sure people find them. Google indexing, Maps optimization, schema markup, and local SEO that delivers real clicks.</p>
-          </div>
-        </div>
-      </div>
+  const setFloatingCtaVisible = (show) => {
+    floatingCta.classList.toggle('opacity-0', !show);
+    floatingCta.classList.toggle('translate-y-4', !show);
+    floatingCta.classList.toggle('pointer-events-none', !show);
+  };
 
-      <div class="service-card reveal-up" style="transition-delay: 250ms;">
-        <div class="service-card__outer">
-          <div class="service-card__inner">
-            <div class="service-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h4 class="service-card__title">Analytics & Optimization</h4>
-            <p class="service-card__desc">Data-driven decisions. We track every click, every form submission, every conversion — then optimize relentlessly to improve your ROI.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  new IntersectionObserver((entries) => {
+    contactVisible = entries[0].isIntersecting;
+    setFloatingCtaVisible(window.scrollY > heroSection.offsetHeight * 0.6 && !contactVisible);
+  }, { threshold: 0.2 }).observe(contactSection);
 
-  <!-- Contact CTA -->
-  <section class="section section--cta" id="contact">
-    <div class="cta-block reveal-up">
-      <div class="cta-block__outer">
-        <div class="cta-block__inner">
-          <h2 class="cta-block__heading">Ready to turn your website into a <em>revenue engine?</em></h2>
-          <p class="cta-block__desc">We're taking on select projects in Texas. If you're a serious business owner who wants a website that actually generates leads — let's talk.</p>
-          <a href="mailto:haider@haiderhuss.com" class="btn-primary btn-primary--large">
-            <span>Get in Touch</span>
-            <span class="btn-primary__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  window.addEventListener('scroll', () => {
+    setFloatingCtaVisible(window.scrollY > heroSection.offsetHeight * 0.6 && !contactVisible);
+  }, { passive: true });
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <span class="footer__logo">HaiderHuss</span>
-        <p class="footer__tagline">Texas Web Agency. Trust-first design for businesses that matter.</p>
-      </div>
-      <div class="footer__links">
-        <a href="#work">Work</a>
-        <a href="#results">Results</a>
-        <a href="#services">Services</a>
-        <a href="mailto:haider@haiderhuss.com">Contact</a>
-      </div>
-      <p class="footer__copy">© 2026 HaiderHuss Agency</p>
-    </div>
-  </footer>
+  // Form submission via Web3Forms (free, no backend needed).
+  // Sign up free at https://web3forms.com, get an access key, and replace
+  // WEB3FORMS_ACCESS_KEY below. Until then the form falls back to opening
+  // a mailto draft so no lead is ever silently lost.
+  const WEB3FORMS_ACCESS_KEY = "";
 
-  <script src="app.js"></script>
+  const form = document.getElementById('audit-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    if (!WEB3FORMS_ACCESS_KEY) {
+      const body = `Business: ${data.business}%0AURL: ${data.url}%0APhone: ${data.phone}%0A%0ARequesting a free site audit.`;
+      window.location.href = `mailto:haider@haiderhuss.com?subject=Free Audit Request — ${encodeURIComponent(data.business)}&body=${body}`;
+      status.textContent = "Opening your email client to send the request…";
+      return;
+    }
+
+    status.textContent = "Sending…";
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ access_key: WEB3FORMS_ACCESS_KEY, subject: `Free Audit Request — ${data.business}`, ...data }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        status.textContent = "Got it — we'll send your audit within 24 hours.";
+        form.reset();
+      } else {
+        status.textContent = "Something went wrong. Email haider@haiderhuss.com directly.";
+      }
+    } catch (err) {
+      status.textContent = "Something went wrong. Email haider@haiderhuss.com directly.";
+    }
+  });
+</script>
 </body>
 </html>
